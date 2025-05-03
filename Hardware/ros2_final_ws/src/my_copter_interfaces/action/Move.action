@@ -1,0 +1,13 @@
+# The goal
+float32 distance   # Distance in meters to move forward (if != 0)
+float32 yaw        # Yaw rotation in degrees (if != 0)
+
+---
+# The result
+bool success
+string message
+
+---
+# The feedback
+float32 distance_remaining
+float32 yaw_remaining
