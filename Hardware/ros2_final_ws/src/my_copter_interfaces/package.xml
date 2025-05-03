@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematyp?>
+<package format="3">
+  <name>my_copter_interfaces</name>
+  <version>0.0.0</version>
+  <description>Custom action definitions for the copter project</description>
+
+  <maintainer email="sabari@todo.todo">sabari</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- build system -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- ✱ add these two lines ✱ -->
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- (optional) other runtime deps for messages you list in CMake -->
+  <!-- <exec_depend>geometry_msgs</exec_depend> -->
+
+  <!-- tests -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <!-- ✱ mark this as an interface-only package ✱ -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
