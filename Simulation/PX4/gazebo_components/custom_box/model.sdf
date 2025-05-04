@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="custom_box">
+    <!-- Changed pose z value to place it higher above ground -->
+    <pose>0 0 2 0 0 0</pose>
+    <link name="link">
+      <self_collide>true</self_collide>
+      <!-- Changed to true to allow manual movement -->
+      <kinematic>true</kinematic>
+      <gravity>true</gravity>
+      
+      <inertial>
+        <!-- Increased mass for a larger object -->
+        <mass>5.0</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <!-- Adjusted inertia values for larger size -->
+        <inertia>
+          <ixx>4.167</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.167</iyy>
+          <iyz>0</iyz>
+          <izz>4.167</izz>
+        </inertia>
+      </inertial>
+      
+      <collision name="collision">
+        <geometry>
+          <box>
+            <!-- Increased box size -->
+            <size>3 3 3</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      
+      <!-- Front face (with texture) - adjusted size and position -->
+      <visual name="front">
+        <pose>1.5 0 0 0 1.5708 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3 3</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://custom_box/materials/scripts</uri>
+            <uri>model://custom_box/materials/textures</uri>
+            <name>CustomBox/Image</name>
+          </script>
+        </material>
+      </visual>
+      <!-- Back face (white) - adjusted size and position -->
+      <visual name="back">
+        <pose>-1.5 0 0 0 1.5708 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3 3</size>
+          </plane>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+      <!-- Right face (white) - adjusted size and position -->
+      <visual name="right">
+        <pose>0 1.5 0 -1.5708 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3 3</size>
+          </plane>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+      <!-- Left face (white) - adjusted size and position -->
+      <visual name="left">
+        <pose>0 -1.5 0 1.5708 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3 3</size>
+          </plane>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+      <!-- Top face (white) - adjusted size and position -->
+      <visual name="top">
+        <pose>0 0 1.5 0 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3 3</size>
+          </plane>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+      <!-- Bottom face (white) - adjusted size and position -->
+      <visual name="bottom">
+        <pose>0 0 -1.5 0 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3 3</size>
+          </plane>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

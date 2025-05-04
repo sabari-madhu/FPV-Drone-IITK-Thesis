@@ -50,6 +50,10 @@ Contains various offboard control nodes supporting both single and multi-drone s
 
 These nodes implement template-based visual navigation, where movement is driven by pattern recognition confidence.
 
+### 3. Custom Gazebo Components
+
+This directory also has custom gazebo components which has been created for our simulation.
+
 #### Nodes:
 
 | Node                         | Description                                                 |

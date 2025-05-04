@@ -1,0 +1,14 @@
+material CustomBox/Image
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture image.png
+        scale 1 1
+      }
+    }
+  }
+}
